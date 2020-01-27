@@ -37,8 +37,6 @@ void setup() {
   pinMode(midTrigPin, OUTPUT);
   pinMode(rightEchoPin, INPUT);
   pinMode(rightTrigPin, OUTPUT);
-
-//stopMotor();
 }
 
 void loop() {
@@ -48,7 +46,7 @@ void loop() {
   leftSensorVal=digitalRead(leftSensor);
   rightSensorVal=digitalRead(rightSensor);
 
-  if(leftSensorVal==LOW && rightSensorVal==LOW)
+  if(leftSensorVal==HIGH && rightSensorVal==HIGH)
   {
    forwardMovement();
   }
@@ -60,9 +58,9 @@ void loop() {
   {
    moveLeft();
   }
-  if(leftSensorVal==HIGH && rightSensorVal==HIGH)
+  if(leftSensorVal==LOW && rightSensorVal==LOW)
   {
-   stopMotor();
+   // stopMotor();
   } 
 
   midDistanceCheck();
