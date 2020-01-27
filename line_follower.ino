@@ -27,7 +27,7 @@ void loop() {
   leftSensorVal=digitalRead(leftSensor);
   rightSensorVal=digitalRead(rightSensor);
 
-  if(leftSensorVal==HIGH && rightSensorVal==HIGH)
+  if(leftSensorVal==LOW && rightSensorVal==LOW)
   {
    forwardMovement();
   }
@@ -39,7 +39,7 @@ void loop() {
   {
    moveLeft();
   }
-  if(leftSensorVal==LOW && rightSensorVal==LOW)
+  if(leftSensorVal==HIGH && rightSensorVal==HIGH)
   {
    stopMotor();
   }
